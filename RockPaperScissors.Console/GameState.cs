@@ -55,4 +55,9 @@ public class GameState
         isMatchOver = false;
         return true;
     }
+
+    public void StartNewMatch()
+    {
+        GameStateData.ResetMatch();
+    }
 }

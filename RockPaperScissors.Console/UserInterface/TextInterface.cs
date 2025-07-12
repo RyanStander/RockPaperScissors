@@ -21,9 +21,9 @@ public class TextInterface : GameInterfaceBase
         System.Console.WriteLine($"You have selected {difficulty} difficulty.");
     }
 
-    public override void DisplayMatchStart()
+    public override void DisplayRoundStart()
     {
-        System.Console.WriteLine("A new match is starting!\n" + "Choose your hand: 'rock', 'paper', or 'scissors'.");
+        System.Console.WriteLine("A new round is starting!\n" + "Choose your hand: 'rock', 'paper', or 'scissors'.");
     }
 
     public override void DisplayMatchResult(Round round, GameStateData gameStateData)

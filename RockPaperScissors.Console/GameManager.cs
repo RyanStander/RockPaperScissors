@@ -46,7 +46,7 @@ public class GameManager
 
     private void StartMatch()
     {
-        gameInterface.DisplayMatchStart();
+        gameInterface.DisplayRoundStart();
         Round round = new()
         {
             PlayerHand = playerInputHandler.SelectHand(),
@@ -61,6 +61,13 @@ public class GameManager
         else
             gameInterface.RequestQuit(round, gameState.GameStateData);
         
-        //For now it will exit at the end of the round, later it should ask the player if they want to play again
+        QuitOrContinue();
+    }
+
+    private void QuitOrContinue()
+    {
+        playerInputHandler.ContinueGame();
+        gameState.StartNewMatch();
+        StartMatch();
     }
 }

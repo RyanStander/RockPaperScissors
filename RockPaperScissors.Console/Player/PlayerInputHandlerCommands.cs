@@ -64,8 +64,30 @@ public class PlayerInputHandlerCommands : PlayerInputHandler
         Environment.Exit(0);
     }
 
-    protected override void ContinueGame()
+    public override void ContinueGame()
     {
+        while (true)
+        {
+            string? command = System.Console.ReadLine()?.ToLowerInvariant().Trim();
+
+            if (string.IsNullOrEmpty(command))
+            {
+                System.Console.WriteLine("Invalid input. Please try again.");
+                continue;
+            }
+
+            if (MatchesCommand(quitCommands, command))
+            {
+                Quit();
+            }
+
+            if (MatchesCommand(continueCommands, command))
+            {
+                return;
+            }
+
+            System.Console.WriteLine($"Couldn't recognise: {command}. Please try again.");
+        }
     }
 
     private static bool MatchesCommand(IEnumerable<string> commands, string enteredCommand)

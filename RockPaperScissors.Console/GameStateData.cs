@@ -9,9 +9,7 @@ public class GameStateData
 
     public void PlayerWonRound() => PlayerRoundPoints++;
     public void PlayerLostRound() => AiRoundPoints++;
-
     public void PlayerWonMatch() => PlayerMatchPoints++;
-
     public void PlayerLostMatch() => AiMatchPoints++;
 
     public void ResetMatch()

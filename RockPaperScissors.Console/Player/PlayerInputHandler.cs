@@ -7,5 +7,5 @@ public abstract class PlayerInputHandler
     public abstract Difficulty SelectDifficulty();
     public abstract Hand SelectHand();
     protected abstract void Quit();
-    protected abstract void ContinueGame();
+    public abstract void ContinueGame();
 }

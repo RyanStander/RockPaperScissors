@@ -1,5 +1,7 @@
 ﻿namespace RockPaperScissors.Console;
-
+/// <summary>
+/// Holds the data for the game state to be passed around to other classes that might need this.
+/// </summary>
 public class GameStateData
 {
     public int AiRoundPoints { get; private set; }

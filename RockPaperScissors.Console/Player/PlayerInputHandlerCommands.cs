@@ -2,8 +2,13 @@
 
 namespace RockPaperScissors.Console.Player;
 
+/// <summary>
+/// This class handles player inputs through the console using command strings.
+/// </summary>
 public class PlayerInputHandlerCommands : PlayerInputHandler
 {
+    #region Command Definitions
+
     private static readonly string[] rockCommands = { "rock", "r" };
     private static readonly string[] paperCommands = { "paper", "p" };
     private static readonly string[] scissorsCommands = { "scissors", "s" };
@@ -12,6 +17,8 @@ public class PlayerInputHandlerCommands : PlayerInputHandler
     private static readonly string[] hardCommands = { "hard", "h" };
     private static readonly string[] quitCommands = { "quit", "exit" };
     private static readonly string[] continueCommands = { "continue", "resume" };
+
+    #endregion
 
     public override Hand SelectHand()
     {
@@ -44,14 +51,9 @@ public class PlayerInputHandlerCommands : PlayerInputHandler
             return SelectDifficulty();
         }
 
-        if (MatchesCommand(randomCommands, command))
-            return Difficulty.Random;
-
-        if (MatchesCommand(easyCommands, command))
-            return Difficulty.Easy;
-
-        if (MatchesCommand(hardCommands, command))
-            return Difficulty.Hard;
+        if (MatchesCommand(randomCommands, command)) return Difficulty.Random;
+        if (MatchesCommand(easyCommands, command)) return Difficulty.Easy;
+        if (MatchesCommand(hardCommands, command)) return Difficulty.Hard;
 
         System.Console.WriteLine($"Couldn't recognise: {command}. Please try again.");
         return SelectDifficulty();
@@ -72,21 +74,14 @@ public class PlayerInputHandlerCommands : PlayerInputHandler
 
             if (string.IsNullOrEmpty(command))
             {
-                System.Console.WriteLine("Invalid input. Please try again.");
+                System.Console.WriteLine("Invalid input. Please either select 'continue' or 'quit'.");
                 continue;
             }
 
-            if (MatchesCommand(quitCommands, command))
-            {
-                Quit();
-            }
+            if (MatchesCommand(quitCommands, command)) Quit();
+            if (MatchesCommand(continueCommands, command)) return;
 
-            if (MatchesCommand(continueCommands, command))
-            {
-                return;
-            }
-
-            System.Console.WriteLine($"Couldn't recognise: {command}. Please try again.");
+            System.Console.WriteLine($"Couldn't recognise: {command}. Please either select 'continue' or 'quit'.");
         }
     }
 

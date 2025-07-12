@@ -1,5 +1,7 @@
 ﻿namespace RockPaperScissors.Console;
-
+/// <summary>
+/// The GameState handles the progressions of rounds and matches.
+/// </summary>
 public class GameState
 {
     private int bestOfRounds;

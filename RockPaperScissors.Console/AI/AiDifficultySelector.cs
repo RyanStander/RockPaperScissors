@@ -1,5 +1,7 @@
 ﻿namespace RockPaperScissors.Console.AI;
-
+/// <summary>
+/// Determines the AI difficulty based on the provided Difficulty enum.
+/// </summary>
 public static class AiDifficultySelector
 {
     public static AiBase SelectDifficulty(Difficulty difficulty)

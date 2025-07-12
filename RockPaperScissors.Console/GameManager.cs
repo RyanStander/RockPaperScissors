@@ -3,7 +3,10 @@ using RockPaperScissors.Console.Player;
 using RockPaperScissors.Console.UserInterface;
 
 namespace RockPaperScissors.Console;
-
+/// <summary>
+/// The game manager handles all of the other scripts, ideally no actual calculations or logic should be in this class.
+/// Only calling methods from other classes and passing data around.
+/// </summary>
 public class GameManager
 {
     private GameState gameState;
@@ -12,6 +15,8 @@ public class GameManager
     private GameInterfaceBase gameInterface;
     private PlayerInputHandler playerInputHandler;
     private AiBase ai;
+
+    #region Setup
 
     public void StartGame(UserInterfaceMode mode, int bestOfRounds)
     {
@@ -43,6 +48,8 @@ public class GameManager
         gameInterface.DifficultySelected(difficulty);
         ai = AiDifficultySelector.SelectDifficulty(difficulty);
     }
+
+    #endregion
 
     private void StartMatch()
     {

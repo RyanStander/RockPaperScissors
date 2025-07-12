@@ -1,7 +1,9 @@
 ﻿using RockPaperScissors.Console.AI;
 
 namespace RockPaperScissors.Console.UserInterface;
-
+/// <summary>
+/// The base class for the game interface, this will display all information only, does not handle any functions
+/// </summary>
 public abstract class GameInterfaceBase
 {
     public abstract void GameStart(int bestOfRounds);

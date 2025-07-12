@@ -1,5 +1,7 @@
 ﻿namespace RockPaperScissors.Console.AI;
-
+/// <summary>
+/// The random ai will randomly select one of the moves, no strategy is applied.
+/// </summary>
 public class AiRandom : AiBase
 {
     public override Hand GetMove()

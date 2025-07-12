@@ -1,5 +1,7 @@
 ﻿namespace RockPaperScissors.Console;
-
+/// <summary>
+/// This class determines the result of the current match
+/// </summary>
 public class Round
 {
     public Hand PlayerHand;

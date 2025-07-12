@@ -15,7 +15,7 @@ public class TextInterface : GameInterfaceBase
     public override void DisplayDifficultySelection()
     {
         System.Console.WriteLine("Type 'quit' to exit the game.\n" +
-                                 "Please choose a difficulty: 'random', 'easy', or 'hard'.");
+                                 "Please choose a difficulty: 'easy', 'medium', or 'hard'.");
     }
 
     public override void DifficultySelected(Difficulty difficulty)

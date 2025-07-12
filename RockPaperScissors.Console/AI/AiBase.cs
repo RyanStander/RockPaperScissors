@@ -4,5 +4,11 @@
 /// </summary>
 public abstract class AiBase
 {
+    protected List<Round> rounds = new List<Round>();
     public abstract Hand GetMove();
+    
+    public void AddRound(Round round)
+    {
+        rounds.Add(round);
+    }
 }

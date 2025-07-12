@@ -61,6 +61,7 @@ public class GameManager
         };
         
         gameState.GetWinner(round.GetResult());
+        ai.AddRound(round);
         gameInterface.DisplayMatchResult(round, gameState.GameStateData);
         
         if(!gameState.IsMatchOver())

@@ -12,7 +12,7 @@ public class PlayerInputHandlerCommands : PlayerInputHandler
     private static readonly string[] rockCommands = { "rock", "r" };
     private static readonly string[] paperCommands = { "paper", "p" };
     private static readonly string[] scissorsCommands = { "scissors", "s" };
-    private static readonly string[] randomCommands = { "random", "r" };
+    private static readonly string[] randomCommands = { "medium", "m" };//the player thinks its medium but we are just using our random ai
     private static readonly string[] easyCommands = { "easy", "e" };
     private static readonly string[] hardCommands = { "hard", "h" };
     private static readonly string[] quitCommands = { "quit", "exit" };

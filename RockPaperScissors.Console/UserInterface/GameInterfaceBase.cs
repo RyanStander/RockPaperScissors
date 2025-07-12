@@ -1,21 +1,17 @@
-﻿namespace RockPaperScissors.Console.UserInterface;
+﻿using RockPaperScissors.Console.AI;
 
-public class GameInterfaceBase
+namespace RockPaperScissors.Console.UserInterface;
+
+public abstract class GameInterfaceBase
 {
-    public virtual void GameStart(){}
-    
-    public virtual void DisplayMatchStart()
-    {
-        
-    }
+    public abstract void GameStart(int bestOfRounds);
 
-    public virtual void DisplayMatchResult()
-    {
-        
-    }
+    public abstract void DisplayDifficultySelection();
+    public abstract void DifficultySelected(Difficulty difficulty);
 
-    public virtual void RequestQuit()
-    {
-        
-    }
+    public abstract void DisplayMatchStart();
+
+    public abstract void DisplayMatchResult(Round round, GameStateData gameStateData);
+
+    public abstract void RequestQuit(Round round, GameStateData gameStateData);
 }

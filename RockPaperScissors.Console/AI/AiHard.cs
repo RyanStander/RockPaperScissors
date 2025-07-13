@@ -53,12 +53,6 @@ public class AiHard : AiBase
         float totalPreference = frequencyAnalysisPreference + markovChainPreference + mimicAndBreakPreference +
                                 baitingPreference;
 
-        System.Console.WriteLine("Preference to each strategy with name: " +
-                                 $"Frequency Analysis: {frequencyAnalysisPreference}, " +
-                                 $"Markov Chain: {markovChainPreference}, " +
-                                 $"Mimic and Break: {mimicAndBreakPreference}, " +
-                                 $"Baiting: {baitingPreference}, ");
-
         //default to paper is there is no preferences
         if (totalPreference <= 0)
             return Hand.Paper;

@@ -2,7 +2,7 @@
 /// <summary>
 /// Determines the AI difficulty based on the provided Difficulty enum.
 /// </summary>
-public static class AiDifficultySelector
+public static class AiUtilityFunctions
 {
     public static AiBase SelectDifficulty(Difficulty difficulty)
     {
@@ -10,9 +10,20 @@ public static class AiDifficultySelector
         {
             Difficulty.Random => new AiRandom(),
             Difficulty.Easy => new AiEasy(),
-            Difficulty.Hard => throw new NotImplementedException("Hard mode Ai is not implemented yet."),
+            Difficulty.Hard => new AiHard(),
             Difficulty.None => throw new ArgumentException("Difficulty cannot be None.", nameof(difficulty)),
             _ => throw new ArgumentOutOfRangeException(nameof(difficulty), difficulty, null)
+        };
+    }
+
+    public static Hand GetCounterHand(Hand hand)
+    {
+        return hand switch
+        {
+            Hand.Rock => Hand.Paper,
+            Hand.Paper => Hand.Scissors,
+            Hand.Scissors => Hand.Rock,
+            _ => throw new ArgumentOutOfRangeException(nameof(hand), hand, "Invalid hand type.")
         };
     }
 }

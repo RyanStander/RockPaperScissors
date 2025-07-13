@@ -46,7 +46,7 @@ public class GameManager
         gameInterface.DisplayDifficultySelection();
         Difficulty difficulty = playerInputHandler.SelectDifficulty();
         gameInterface.DifficultySelected(difficulty);
-        ai = AiDifficultySelector.SelectDifficulty(difficulty);
+        ai = AiUtilityFunctions.SelectDifficulty(difficulty);
     }
 
     #endregion

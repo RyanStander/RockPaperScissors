@@ -7,7 +7,7 @@ namespace RockPaperScissors.Console.UserInterface;
 /// </summary>
 public class TextInterface : GameInterfaceBase
 {
-    private void Clear()
+    public void Clear()
     {
         System.Console.Clear();
     }
@@ -83,7 +83,6 @@ public class TextInterface : GameInterfaceBase
 
     public override void RequestQuit(Round round, GameStateData gameStateData)
     {
-        Clear();
         Header("MATCH OVER");
 
         if (round.GetResult() == RoundResult.PlayerWin)

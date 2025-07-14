@@ -75,6 +75,10 @@ public class GameManager
     private void QuitOrContinue()
     {
         playerInputHandler.ContinueGame();
+        
+        if (uiMode == UserInterfaceMode.Console)
+            ((TextInterface)gameInterface).Clear();
+        
         gameState.StartNewMatch();
         StartMatch();
     }
